@@ -1,5 +1,5 @@
 from scapy.all import sniff, IP, TCP, UDP
-import os
+import socket
 import time
 
 # Blocked IP addresses and ports
@@ -21,6 +21,11 @@ def packet_callback(packet):
             ip_layer = packet[IP]
             src_ip = ip_layer.src
             dst_ip = ip_layer.dst
+            
+            # adding domain name
+            src_domain = resolve_domain(src_ip)
+            dst_domain = resolve_domain(dst_ip)
+            print(f"Source: {src_ip} ({src_domain}) -> Destination: {dst_ip} ({dst_domain})")
 
             # checking for blocked ip
             if src_ip in blocked_ips or dst_ip in blocked_ips:
@@ -49,6 +54,13 @@ def packet_callback(packet):
 def start_firewall():
     print("Simple firewall is running....")
     sniff(prn=packet_callback, store=0, filter="ip")
+
+def resolve_domain(ip):
+    try:
+        domain = socket.gethostbyaddr(ip)[0]
+    except socket.herror:
+        domain = "Unknown"
+    return domain
 
 if __name__ == "__main__":
     start_firewall()
