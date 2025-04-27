@@ -14,10 +14,9 @@ This project is a basic firewall built in Python that monitors incoming and outg
 ## Features
 - Real-time packet monitoring.
 - Display of both IP addresses and their resolved domain names.
-- Blocking of specific IP addresses and ports based on predefined rules.
+- Blocking of specific IP addresses and ports based on given list of IP addresses and ports.
 - Logging of all blocked activities to a file (`firewall_log.txt`).
 - Simple and user-friendly GUI built with Tkinter.
-- No administrative (sudo) access required — compatible with standard Windows setups.
 
 ## Development Journey
 The project evolved through multiple phases:
