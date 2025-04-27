@@ -9,9 +9,7 @@
 ---
 
 ## Description
-This project is a basic firewall built in Python that monitors incoming and outgoing network packets on a Windows machine. It captures packets in real-time using the Scapy library, checks them against a predefined list of blocked IP addresses and ports, and either allows or blocks the traffic accordingly.  
-Blocked activities are logged into a file for review.  
-It provides a lightweight simulation of how a real firewall operates — making it ideal for learning concepts in network security, packet filtering, and traffic monitoring.
+This project is a basic firewall built in Python that monitors incoming and outgoing network packets on a Windows machine. It captures packets in real-time using the Scapy library, checks them against a predefined list of blocked IP addresses and ports, and either allows or blocks the traffic accordingly. Blocked activities are logged into a file for review. It provides a lightweight simulation of how a real firewall operates — making it ideal for learning concepts in network security, packet filtering, and traffic monitoring.
 
 ## Features
 - Real-time packet monitoring.
